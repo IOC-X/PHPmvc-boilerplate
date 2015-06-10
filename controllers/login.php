@@ -12,11 +12,10 @@
 				header('location:'.URL);
 			}
 		}
-		public function login($a){
-			require 'models/Login_model.php';
-			$model = new Login_model();
-			$model->login();
+		public function login($argument = ""){
+			echo $argument;
 		}
+		//example for how to use a model
 		public function signup(){
 			require 'models/Login_model.php';
 			$model = new Login_model();
