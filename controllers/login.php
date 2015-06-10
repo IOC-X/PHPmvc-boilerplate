@@ -11,9 +11,8 @@
 			else{
 				header('location:'.URL);
 			}
-			
 		}
-		public function login(){
+		public function login($a){
 			require 'models/Login_model.php';
 			$model = new Login_model();
 			$model->login();

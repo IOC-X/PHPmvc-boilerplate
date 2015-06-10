@@ -3,7 +3,7 @@
 		function __construct(){
 			$url = isset($_GET['url']) ? $_GET['url'] : null;
 			$url = explode('/', $url);
-		//	print_r($url);
+			//print_r($url);
 			//if empty redirect to index
 			if(empty($url[0])){	
 				require 'controllers/index.php';
@@ -17,10 +17,8 @@
 				$controller = new $url[0]();
 				
 				if(isset($url[1])){
-					if(isset($url[2])){
-						if(method_exists($controller, $url[2])){
-							$controller->$url[2]();
-						}	
+					if(isset($url[2])){			
+						$controller->$url[1]($url[2]);
 					}
 					else{
 						if(method_exists($controller, $url[1])){
